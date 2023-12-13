@@ -44,7 +44,9 @@ public class MyWorlds extends World
                 addObject(wood, mouse.getX(),mouse.getY());
             }
         }
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("right")){
             wood.setRotation(wood.getRotation()+1);
+        }
+        
     }
 }
