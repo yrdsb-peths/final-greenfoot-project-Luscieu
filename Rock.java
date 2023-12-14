@@ -2,13 +2,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 import java.util.List;
 /**
- * Write a description of class Wood here.
+ * Write a description of class Rock here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Wood extends Animate
+public class Rock extends Animate
 {
+    /**
+     * Act - do whatever the Rock wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+        // Add your action code here.
     float velocityY = 0;
     float velocityX = 0;
     int rSpeed = 0;
@@ -20,12 +25,12 @@ public class Wood extends Animate
      * Act - do whatever the Wood wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Wood(int scalor) 
+    public Rock(int scalor) 
     {
         b.scale(scalor,scalor);
         setImage(b);
         size = scalor;
-        getImage().setColor(new Color(150,100,100,250));
+        getImage().setColor(new Color(50, 50, 50));
         getImage().fill();
         
     }    
@@ -35,7 +40,7 @@ public class Wood extends Animate
      */
     public void act()
     {
-        getImage().setColor(new Color(150,100,100,250));
+        getImage().setColor(new Color(50, 50, 50));
         getImage().fill();
         setRotation(getRotation()+rSpeed);
         setLocation(getX()+(int)Math.round(velocityX),getY());
@@ -50,7 +55,6 @@ public class Wood extends Animate
         {
             setRotation(Math.abs(getRotation())-1);
         }
-        impartForce();
         {
             velocityY += .1;
             //speed += .1;
@@ -66,11 +70,8 @@ public class Wood extends Animate
             //velocityX = velocityX*.7f;
             //velocityX = 0;
         }
-        if(getY()>285)
-        {
-            getWorld().removeObject(this);
-        }
         getImage().setColor(Color.BLUE);
+        
     }
     public float getFriction()
     {
@@ -210,3 +211,4 @@ public class Wood extends Animate
         }
     }
 }
+

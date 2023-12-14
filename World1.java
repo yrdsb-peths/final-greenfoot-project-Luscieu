@@ -17,20 +17,31 @@ public class World1 extends MyWorlds
     public World1()
     {
         
-        getBackground().setColor(Color.BLUE);
-        getBackground().fill();
+        getBackground().setColor(Color.BLUE); //Sets color to blue
+        getBackground().fill(); // creates background using the set color
         getBackground().setColor(Color.GREEN);
         //getBackground().fillOval(260,160,80,80);
         getBackground().fillRect(0,300,600,100);
         
+        /* 
+        getBackground().setColor(Color.LIGHT_GRAY);
+        for(int i = 0; i<3;i++)
+        {
+            getBackground().fillRect(360+75*i, 280, 25, 25);
+        }
+        */
         
         addObject(new Pig(),430,280);
         addObject(new Pig(),490,280);
         addObject(new Sling(),100,275);
+        
+        addObject(new Rock(20),370,280);
+        addObject(new Rock(20),445,280);
+        addObject(new Rock(20),520,280);
         for(int i = 0; i<7;i++)
         {
-            addObject(new Wood(20),400,150+12*i);
-            addObject(new Wood(20),460,160+12*i);
+            addObject(new Wood(20),370,150+12*i);
+            addObject(new Wood(20),445,160+12*i);
             addObject(new Wood(20),520,170+12*i);
         }
     }
