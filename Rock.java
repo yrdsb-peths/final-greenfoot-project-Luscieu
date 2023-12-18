@@ -14,6 +14,7 @@ public class Rock extends Animate
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
         // Add your action code here.
+        // a
     float velocityY = 0;
     float velocityX = 0;
     int rSpeed = 0;
