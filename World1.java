@@ -35,14 +35,27 @@ public class World1 extends MyWorlds
         addObject(new Pig(),490,280);
         addObject(new Sling(),100,275);
         
-        addObject(new Rock(20),370,280);
-        addObject(new Rock(20),445,280);
-        addObject(new Rock(20),520,280);
-        for(int i = 0; i<7;i++)
+        for(int i = 0; i<4;i++)
         {
-            addObject(new Wood(20),370,150+12*i);
-            addObject(new Wood(20),445,160+12*i);
-            addObject(new Wood(20),520,170+12*i);
+            addObject(new Rock(20),320,290-15*i);
+            if(i<3)
+            {
+                addObject(new Rock(20),400,290-15*i);
+            }
+            if(i<2)
+            {
+                addObject(new Rock(20),480,290-15*i);
+            }
+        }
+        
+        for(int i = 0; i<4;i++)
+        {
+            addObject(new Wood(20),320,120+12*i);
+            
+            addObject(new Wood(20),400,130+12*i);
+            
+            
+            addObject(new Wood(20),480,140+12*i);
         }
     }
 }
