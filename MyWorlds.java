@@ -26,7 +26,7 @@ public class MyWorlds extends World
             MouseInfo mouse = Greenfoot.getMouseInfo();
             if(mouse.getButton() <2)
             {
-                removeObject(ball);
+                //removeObject(ball);
                 ball = new Ball();
                 addObject(ball,100,275);
                 if(275-mouse.getY() > -50)
