@@ -10,15 +10,13 @@ public class World1 extends MyWorlds
 {
     Wood wood;
     Ball ball;
-    int scoreValue = 0;
     /**
      * Constructor for objects of class World1.
      * 
      */
     public World1()
     {
-        Label score = new Label(scoreValue, 30);
-        addObject(score, 30, 30);
+        
         
         getBackground().setColor(Color.BLUE); //Sets color to blue
         getBackground().fill(); // creates background using the set color

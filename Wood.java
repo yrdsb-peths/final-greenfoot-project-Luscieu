@@ -13,6 +13,7 @@ public class Wood extends Animate
     float velocityX = 0;
     int rSpeed = 0;
     int size = 20;
+    int score = 0;
     //Wood flipper;
     boolean second = false;
     GreenfootImage b =new GreenfootImage("Broken_Block.png");
@@ -69,6 +70,8 @@ public class Wood extends Animate
         if(getY()>285)
         {
             getWorld().removeObject(this);
+            MyWorlds world = (MyWorlds) getWorld();
+            world.scoreIncrease();
         }
         getImage().setColor(Color.BLUE);
     }

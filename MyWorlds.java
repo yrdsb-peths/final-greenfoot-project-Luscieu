@@ -10,6 +10,8 @@ public class MyWorlds extends World
 {
     Wood wood;
     Ball ball;
+    static int score = 0;
+    static Label scoreLabel;
     /**
      * Constructor for objects of class MyWorlds.
      * 
@@ -18,10 +20,13 @@ public class MyWorlds extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        
+        score = 0;
+        scoreLabel = new Label(score, 30);
+        addObject(scoreLabel, 30, 30);
     }
     public void act()
     {
+        
         if(Greenfoot.mouseClicked(null)){
             MouseInfo mouse = Greenfoot.getMouseInfo();
             if(mouse.getButton() <2)
@@ -48,5 +53,10 @@ public class MyWorlds extends World
             wood.setRotation(wood.getRotation()+1);
         }
         
+    }
+    public static void scoreIncrease()
+    {
+        score+=100;
+        scoreLabel.setValue(score);
     }
 }
