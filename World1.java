@@ -36,6 +36,8 @@ public class World1 extends MyWorlds
         addObject(new Pig(),490,280);
         addObject(new Sling(),100,275);
         
+        
+        
         for(int i = 0; i<4;i++)
         {
             addObject(new Rock(20),320,290-15*i);
@@ -57,6 +59,43 @@ public class World1 extends MyWorlds
             
             
             addObject(new Wood(20),480,140+12*i);
+        }
+    }
+    public void act()
+    {
+        Star one = new Star();
+        Star two = new Star();
+        Star three = new Star();
+        
+        Blackstar four = new Blackstar();
+        addObject(four,450,40);
+        Blackstar five = new Blackstar();
+        addObject(five,505,40);
+        Blackstar six = new Blackstar();
+        addObject(six,560,40);
+        if(MyWorlds.getScore()>1000)
+        {
+            if(six!=null)
+            {
+                removeObject(six);
+            }
+            addObject(three,560,40);
+        }
+        if(MyWorlds.getScore()>600)
+        {
+            if(five!=null)
+            {
+                removeObject(five);
+            }
+            addObject(two,505,40);
+        }
+        if(MyWorlds.getScore()>300)
+        {
+            if(four!=null)
+            {
+                removeObject(four);
+            }
+            addObject(one,450,40); 
         }
     }
 }

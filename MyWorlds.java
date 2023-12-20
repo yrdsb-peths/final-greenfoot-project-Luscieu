@@ -59,4 +59,8 @@ public class MyWorlds extends World
         score+=100;
         scoreLabel.setValue(score);
     }
+    public static int getScore()
+    {
+        return score;
+    }
 }
