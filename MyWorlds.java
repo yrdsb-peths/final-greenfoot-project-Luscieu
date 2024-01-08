@@ -24,36 +24,8 @@ public class MyWorlds extends World
         scoreLabel = new Label(score, 30);
         addObject(scoreLabel, 30, 30);
     }
-    public void act()
-    {
+    
         
-        if(Greenfoot.mouseClicked(null)){
-            MouseInfo mouse = Greenfoot.getMouseInfo();
-            if(mouse.getButton() <2)
-            {
-                //removeObject(ball);
-                ball = new Ball();
-                addObject(ball,100,275);
-                if(275-mouse.getY() > -50)
-                    ball.velocityY = (275-mouse.getY())/10;
-                else
-                    ball.velocityY =-5;
-                if(100-mouse.getX() < 50)
-                    ball.velocityX = (100-mouse.getX())/10;
-                else
-                    ball.velocityX = 5;
-            }
-            else
-            {
-                wood = new Wood(20);
-                addObject(wood, mouse.getX(),mouse.getY());
-            }
-        }
-        if(Greenfoot.isKeyDown("right")){
-            wood.setRotation(wood.getRotation()+1);
-        }
-        
-    }
     public static void scoreIncrease()
     {
         score+=100;

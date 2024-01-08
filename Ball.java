@@ -13,6 +13,11 @@ public class Ball extends Animate
     float velocityX = 0;
     float speed = 0;
     boolean roll = true;
+    public Ball() {
+        // Initialize the ball image or other properties
+        GreenfootImage ballImage = new GreenfootImage("beeper.png"); // You can replace "ball.png" with the actual image file
+        setImage(ballImage);
+    }
     /**
      * Act - do whatever the Ball wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
