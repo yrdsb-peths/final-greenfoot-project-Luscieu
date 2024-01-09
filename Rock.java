@@ -18,7 +18,7 @@ public class Rock extends Animate
     int size = 20;
     //Wood flipper;
     boolean second = false;
-    GreenfootImage b =new GreenfootImage("Broken_Block.png");
+    GreenfootImage b = new GreenfootImage("Broken_Block.png");
     /**
      * Act - do whatever the Wood wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

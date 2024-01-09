@@ -12,14 +12,17 @@ public class Pig extends Animate
     float velocityY = 0;
     float velocityX = 0;
     int rSpeed = 0;
+    int size = 20;
+    GreenfootImage pig = new GreenfootImage("pig.png");
     /**
      * Act - do whatever the Wood wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Pig() 
+    public Pig(int scalor) 
     {
-        getImage().setColor(Color.BLUE);
-        getImage().fillRect(0,0,20,20);
+        pig.scale(scalor,scalor);
+        setImage(pig);
+        size = scalor;
     }    
     public void act()
     {
@@ -45,12 +48,18 @@ public class Pig extends Animate
             setLocation(getX(),getY()+(int)Math.round(velocityY));
         else{
             if(velocityY>1.5){
-                getWorld().removeObject(this);
                 return;
             }
             velocityY = 0;
             //velocityX = velocityX*.7f;
             //velocityX = 0;
+        }
+        if(getY()>285)
+        {
+            getWorld().removeObject(this);
+            MyWorlds world = (MyWorlds) getWorld();
+            world.scoreIncrease();
+            world.scoreIncrease();
         }
     }
     public void impartForce()
@@ -100,13 +109,5 @@ public class Pig extends Animate
     {
         velocityX += x;
         velocityY += y;
-        stop();
-    }
-    public void stop()
-    {
-        if(Math.pow(Math.pow(velocityY,2)+Math.pow(velocityX,2),.5)>1.5){
-            getWorld().removeObject(this);
-            return;
-        }
     }
 }

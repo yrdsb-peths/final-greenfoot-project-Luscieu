@@ -52,10 +52,10 @@ public class Wood extends Animate
             setRotation(Math.abs(getRotation())-1);
         }
         impartForce();
-        {
-            velocityY += .1;
-            //speed += .1;
-        }
+    
+        velocityY += .1;
+        //speed += .1;
+    
         if(getY() <= 288-(10*Math.sin(Math.abs(Math.toRadians(getRotation()))))&&!getBelow())
             setLocation(getX(),getY()+(int)Math.round(velocityY));
         else{

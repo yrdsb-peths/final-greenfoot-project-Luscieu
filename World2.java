@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class World1 here.
+ * Write a description of class World2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class World1 extends MyWorlds
+public class World2 extends MyWorlds
 {
     Wood wood;
     Ball ball;
@@ -14,7 +14,7 @@ public class World1 extends MyWorlds
      * Constructor for objects of class World1.
      * 
      */
-    public World1()
+    public World2()
     {
         
         
@@ -32,33 +32,25 @@ public class World1 extends MyWorlds
         }
         */
         
-        addObject(new Pig(20),430,280);
-        addObject(new Pig(20),490,280);
+        addObject(new Pig(10),320,100);
+        addObject(new Pig(10),440,50);
         addObject(new Sling(),100,275);
         
         
         
-        for(int i = 0; i<4;i++)
-        {
-            addObject(new Rock(20),320,290-15*i);
-            if(i<3)
-            {
-                addObject(new Rock(20),400,290-15*i);
-            }
-            if(i<2)
-            {
-                addObject(new Rock(20),480,290-15*i);
-            }
-        }
         
-        for(int i = 0; i<4;i++)
+        addObject(new Rock(20),320,220);
+        addObject(new Rock(20),360,280);
+        addObject(new Rock(20),440,150);
+        addObject(new Rock(20),480,210);
+           
+        
+        for(int i = 0; i<2;i++)
         {
-            addObject(new Wood(20),320,120+12*i);
-            
-            addObject(new Wood(20),400,130+12*i);
-            
-            
-            addObject(new Wood(20),480,140+12*i);
+            addObject(new Wood(20),320,180-30*i);
+            addObject(new Wood(20),360,240-30*i);
+            addObject(new Wood(20),440,110-30*i);
+            addObject(new Wood(20),480,170-30*i);
         }
     }
     public void act()
