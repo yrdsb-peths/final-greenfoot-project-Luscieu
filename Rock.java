@@ -18,7 +18,7 @@ public class Rock extends Animate
     int size = 20;
     //Wood flipper;
     boolean second = false;
-    GreenfootImage b = new GreenfootImage("Broken_Block.png");
+    GreenfootImage b = new GreenfootImage("unnamed.png");
     /**
      * Act - do whatever the Wood wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,8 +28,6 @@ public class Rock extends Animate
         b.scale(scalor,scalor);
         setImage(b);
         size = scalor;
-        getImage().setColor(new Color(50, 50, 50));
-        getImage().fill();
         
     }    
     /**
@@ -38,14 +36,7 @@ public class Rock extends Animate
      */
     public void act()
     {
-        getImage().setColor(new Color(50, 50, 50));
-        getImage().fill();
-        
-        
-        
-        
-        getImage().setColor(Color.BLUE);
-        
+        ;
     }
     
 }

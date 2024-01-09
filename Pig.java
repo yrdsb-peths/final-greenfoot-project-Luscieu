@@ -40,14 +40,14 @@ public class Pig extends Animate
             setRotation(Math.abs(getRotation())-1);
         }
         impartForce();
-        {
-            velocityY += .1;
-            //speed += .1;
-        }
+        velocityY += .01;
+        //speed += .1;
+        
+        //Gravity
         if(getY() <= 288-(10*Math.sin(Math.abs(Math.toRadians(getRotation()))))&&!getBelow())
             setLocation(getX(),getY()+(int)Math.round(velocityY));
         else{
-            if(velocityY>1.5){
+            if(velocityY>3){
                 return;
             }
             velocityY = 0;

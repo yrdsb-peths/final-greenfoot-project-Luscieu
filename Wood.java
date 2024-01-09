@@ -16,7 +16,7 @@ public class Wood extends Animate
     int score = 0;
     //Wood flipper;
     boolean second = false;
-    GreenfootImage b =new GreenfootImage("Broken_Block.png");
+    GreenfootImage b =new GreenfootImage("wood.jpg");
     /**
      * Act - do whatever the Wood wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -26,8 +26,6 @@ public class Wood extends Animate
         b.scale(scalor,scalor);
         setImage(b);
         size = scalor;
-        getImage().setColor(new Color(150,100,100,250));
-        getImage().fill();
         
     }    
     /**
@@ -36,8 +34,6 @@ public class Wood extends Animate
      */
     public void act()
     {
-        getImage().setColor(new Color(150,100,100,250));
-        getImage().fill();
         setRotation(getRotation()+rSpeed);
         setLocation(getX()+(int)Math.round(velocityX),getY());
         //slideGetAbove();
@@ -73,7 +69,6 @@ public class Wood extends Animate
             MyWorlds world = (MyWorlds) getWorld();
             world.scoreIncrease();
         }
-        getImage().setColor(Color.BLUE);
     }
     public float getFriction()
     {

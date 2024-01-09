@@ -32,25 +32,25 @@ public class World2 extends MyWorlds
         }
         */
         
-        addObject(new Pig(10),320,100);
-        addObject(new Pig(10),440,50);
+        addObject(new Pig(24),390,100);
+        addObject(new Pig(24),510,50);
         addObject(new Sling(),100,275);
         
         
         
         
         addObject(new Rock(20),320,220);
-        addObject(new Rock(20),360,280);
+        addObject(new Rock(20),390,280);
         addObject(new Rock(20),440,150);
-        addObject(new Rock(20),480,210);
+        addObject(new Rock(20),510,210);
            
         
         for(int i = 0; i<2;i++)
         {
             addObject(new Wood(20),320,180-30*i);
-            addObject(new Wood(20),360,240-30*i);
+            addObject(new Wood(20),390,240-30*i);
             addObject(new Wood(20),440,110-30*i);
-            addObject(new Wood(20),480,170-30*i);
+            addObject(new Wood(20),510,170-30*i);
         }
     }
     public void act()
