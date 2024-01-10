@@ -13,7 +13,7 @@ public class Wood extends Animate
     float velocityX = 0;
     int rSpeed = 0;
     int size = 20;
-    int score = 0;
+    
     //Wood flipper;
     boolean second = false;
     GreenfootImage b =new GreenfootImage("wood.jpg");
