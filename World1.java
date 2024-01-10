@@ -71,7 +71,6 @@ public class World1 extends MyWorlds
                 removeObject(ball);
                 ball = new Ball();
                 addObject(ball,100,275);
-                System.out.println("ball");
                 if(275-mouse.getY() > -50)
                 {
                     ball.velocityY = (275-mouse.getY())/10;

@@ -10,6 +10,8 @@ public class World2 extends MyWorlds
 {
     Wood wood;
     Ball ball;
+    
+    int once = 0;
     /**
      * Constructor for objects of class World1.
      * 
@@ -36,14 +38,22 @@ public class World2 extends MyWorlds
         addObject(new Pig(20),540,150);
         addObject(new Sling(),100,275);
         
-        
-        
-        
         addObject(new Rock(20),300,240);
         addObject(new Rock(20),430,290);
         addObject(new Rock(20),410,180);
         addObject(new Rock(20),540,250);
-           
+        
+        
+        Star one = new Star();
+        Star two = new Star();
+        Star three = new Star();
+        
+        Blackstar four = new Blackstar();
+        addObject(four,450,40);
+        Blackstar five = new Blackstar();
+        addObject(five,505,40);
+        Blackstar six = new Blackstar();
+        addObject(six,560,40);
         
         for(int i = 0; i<2;i++)
         {
@@ -81,25 +91,26 @@ public class World2 extends MyWorlds
                     ball.velocityX = 5;
                 }
             }
-            else
-            {
-                wood = new Wood(20);
-                addObject(wood, mouse.getX(),mouse.getY());
-            }
         }
         
         
-    
         Star one = new Star();
         Star two = new Star();
         Star three = new Star();
         
         Blackstar four = new Blackstar();
-        addObject(four,450,40);
         Blackstar five = new Blackstar();
-        addObject(five,505,40);
         Blackstar six = new Blackstar();
-        addObject(six,560,40);
+        
+        if(once == 0)
+        {
+            addObject(four,450,40);
+            addObject(five,505,40);
+            addObject(six,560,40);
+            once++;
+        }
+        
+        
         if(MyWorlds.getScore()>1000)
         {
             if(six!=null)

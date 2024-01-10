@@ -26,10 +26,8 @@ public class Ball extends Animate
     
     public void act() 
     {
-        {
-            velocityY += .1;
-            speed += .1;
-        }
+        velocityY += .1;
+        speed += .1;
         if(getY() >= 287)
             velocityX = velocityX*.9f;
         if(getY() <= 285&&roll == false){
