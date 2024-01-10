@@ -49,13 +49,13 @@ public class Wood extends Animate
         }
         impartForce();
     
-        velocityY += .1;
+        velocityY += .07;
         //speed += .1;
     
         if(getY() <= 288-(10*Math.sin(Math.abs(Math.toRadians(getRotation()))))&&!getBelow())
             setLocation(getX(),getY()+(int)Math.round(velocityY));
         else{
-            if(velocityY>5){
+            if(velocityY>3){
                 getWorld().removeObject(this);
                 return;
             }
