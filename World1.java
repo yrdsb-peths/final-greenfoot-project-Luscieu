@@ -10,6 +10,7 @@ public class World1 extends MyWorlds
 {
     Wood wood;
     Ball ball;
+    int once = 0;
     /**
      * Constructor for objects of class World1.
      * 
@@ -102,11 +103,16 @@ public class World1 extends MyWorlds
         Star three = new Star();
         
         Blackstar four = new Blackstar();
-        addObject(four,450,40);
         Blackstar five = new Blackstar();
-        addObject(five,505,40);
         Blackstar six = new Blackstar();
-        addObject(six,560,40);
+        
+        if(once == 0)
+        {
+            addObject(four,450,40);
+            addObject(five,505,40);
+            addObject(six,560,40);
+            once++;
+        }
         if(MyWorlds.getScore()>1000)
         {
             if(six!=null)
