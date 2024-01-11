@@ -68,12 +68,12 @@ public class World2 extends MyWorlds
         
         if(Greenfoot.mouseClicked(null)){
             MouseInfo mouse = Greenfoot.getMouseInfo();
-            if(mouse.getButton() <2 && ballCount < 5)
+            if(mouse.getButton() <2 && MyWorlds.getBall()>=1)
             {
                 removeObject(ball);
                 ball = new Ball();
                 addObject(ball,100,275);
-                ballCount++;
+                MyWorlds.countBall(-1);
                 if(275-mouse.getY() > -50)
                 {
                     ball.velocityY = (275-mouse.getY())/10;
