@@ -58,7 +58,10 @@ public class Ball extends Animate
         {
             roll = true;
         }
-        else roll = false;
+        else 
+        {
+            roll = false;
+        }
     }
     public void impartForce()
     {

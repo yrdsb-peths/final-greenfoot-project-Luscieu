@@ -10,7 +10,7 @@ public class World2 extends MyWorlds
 {
     Wood wood;
     Ball ball;
-    
+    int ballCount = 0;
     int once = 0;
     /**
      * Constructor for objects of class World1.
@@ -68,12 +68,12 @@ public class World2 extends MyWorlds
         
         if(Greenfoot.mouseClicked(null)){
             MouseInfo mouse = Greenfoot.getMouseInfo();
-            if(mouse.getButton() <2)
+            if(mouse.getButton() <2 && ballCount < 5)
             {
                 removeObject(ball);
                 ball = new Ball();
                 addObject(ball,100,275);
-                
+                ballCount++;
                 if(275-mouse.getY() > -50)
                 {
                     ball.velocityY = (275-mouse.getY())/10;
