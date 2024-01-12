@@ -41,6 +41,7 @@ public class Ball extends Animate
             //velocityX = velocityX*.7f;
         }
         checkBottom();
+        removeTouching(Glass.class);
         //if(velocityY < .3&&velocityX < .3)
             //getWorld().removeObject(this);
     }    

@@ -7,7 +7,7 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Rock extends Animate
+public class Glass extends Animate
 {
     /**
      * Act - do whatever the Rock wants to do. This method is called whenever
@@ -18,12 +18,12 @@ public class Rock extends Animate
     int size = 20;
     //Wood flipper;
     boolean second = false;
-    GreenfootImage b = new GreenfootImage("unnamed.png");
+    GreenfootImage b = new GreenfootImage("glass.png");
     /**
      * Act - do whatever the Wood wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Rock(int scalor) 
+    public Glass(int scalor) 
     {
         b.scale(scalor,scalor);
         setImage(b);
@@ -38,6 +38,4 @@ public class Rock extends Animate
     {
         
     }
-    
-}
-
+}    
