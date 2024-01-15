@@ -14,6 +14,7 @@ public class Pig extends Animate
     int rSpeed = 0;
     int size = 20;
     GreenfootImage pig = new GreenfootImage("pig.png");
+    GreenfootSound pigDeath = new GreenfootSound("death.mp3");
     /**
      * Act - do whatever the Wood wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -59,6 +60,7 @@ public class Pig extends Animate
         {
             getWorld().removeObject(this);
             MyWorlds world = (MyWorlds) getWorld();
+            pigDeath.play();
             world.scoreIncrease();
             world.scoreIncrease();
         }

@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class World3 extends MyWorlds
+public class World4 extends MyWorlds
 {
     Wood wood;
     Ball ball;
@@ -17,7 +17,7 @@ public class World3 extends MyWorlds
      * Constructor for objects of class World1.
      * 
      */
-    public World3()
+    public World4()
     {
         
         

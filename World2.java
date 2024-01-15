@@ -12,6 +12,7 @@ public class World2 extends MyWorlds
     Ball ball;
     int ballCount = 0;
     int once = 0;
+    GreenfootSound bowShoot = new GreenfootSound("shoot1.mp3");
     /**
      * Constructor for objects of class World1.
      * 
@@ -70,6 +71,7 @@ public class World2 extends MyWorlds
             MouseInfo mouse = Greenfoot.getMouseInfo();
             if(mouse.getButton() <2 && MyWorlds.getBall()>=1)
             {
+                bowShoot.play();
                 removeObject(ball);
                 ball = new Ball();
                 addObject(ball,100,275);
