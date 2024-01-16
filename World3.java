@@ -38,6 +38,7 @@ public class World3 extends MyWorlds
         addObject(new Pig(20),430,180);
         addObject(new Pig(20),540,150);
         addObject(new Sling(),100,275);
+        addObject(new Sun(), 100,100);
         
         addObject(new Glass(20),300,240);
         addObject(new Glass(20),430,290);

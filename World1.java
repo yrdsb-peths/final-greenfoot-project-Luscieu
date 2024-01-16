@@ -38,7 +38,7 @@ public class World1 extends MyWorlds
         addObject(new Pig(20),400,180);
         addObject(new Pig(20),480,180);
         addObject(new Sling(),100,275);
-        
+        addObject(new Sun(), 100,100);
         
         
         for(int i = 0; i<4;i++)
