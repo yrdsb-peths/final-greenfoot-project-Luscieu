@@ -25,8 +25,9 @@ public class MyWorlds extends World
         super(600, 400, 1);
         score = 0;
         ballCount = 5;
-        scoreLabel = new Label(score, 30);
-        addObject(scoreLabel, 30, 30);
+        scoreLabel = new Label(0, 30);
+        addObject(scoreLabel, 550, 80);
+        scoreLabel.setValue("0000");
         ballLabel = new Label(ballCount + "x", 30);
         addObject(ballLabel, 30, 380);
         counter = new Ball();
@@ -37,7 +38,17 @@ public class MyWorlds extends World
     public static void scoreIncrease()
     {
         score+=100;
-        scoreLabel.setValue(score);
+        if(getScore()>=1000)
+        {
+            scoreLabel.setValue(score);
+            return;
+        }
+        if(getScore()>=100)
+        {
+            scoreLabel.setValue("0" + score);
+            return;
+        }
+        
     }
     public static int getScore()
     {
