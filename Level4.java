@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class World3 extends MyWorlds
+public class Level4 extends MyWorlds
 {
     Wood wood;
     Ball ball;
@@ -17,7 +17,7 @@ public class World3 extends MyWorlds
      * Constructor for objects of class World1.
      * 
      */
-    public World3()
+    public Level4()
     {
         
         
@@ -39,6 +39,7 @@ public class World3 extends MyWorlds
         addObject(new Pig(20),540,150);
         addObject(new Sling(),100,275);
         addObject(new Sun(), 100,100);
+        addObject(new Back(), 30, 30);
         
         addObject(new Glass(20),300,240);
         addObject(new Glass(20),430,290);

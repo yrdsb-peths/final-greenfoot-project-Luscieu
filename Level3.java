@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class World2 here.
+ * Write a description of class World3 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class World2 extends MyWorlds
+public class Level3 extends MyWorlds
 {
     Wood wood;
     Ball ball;
@@ -17,7 +17,7 @@ public class World2 extends MyWorlds
      * Constructor for objects of class World1.
      * 
      */
-    public World2()
+    public Level3()
     {
         
         
@@ -39,11 +39,12 @@ public class World2 extends MyWorlds
         addObject(new Pig(20),540,150);
         addObject(new Sling(),100,275);
         addObject(new Sun(), 100,100);
+        addObject(new Back(), 30, 30);
         
-        addObject(new Rock(20),300,240);
-        addObject(new Rock(20),430,290);
-        addObject(new Rock(20),410,180);
-        addObject(new Rock(20),540,250);
+        addObject(new Glass(20),300,240);
+        addObject(new Glass(20),430,290);
+        addObject(new Glass(20),410,180);
+        addObject(new Glass(20),540,250);
         
         
         Star one = new Star();
@@ -140,3 +141,4 @@ public class World2 extends MyWorlds
         }
     }
 }
+

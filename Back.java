@@ -23,8 +23,8 @@ public class Back extends Actor
     {
         if (Greenfoot.mouseClicked(this)) {
             // Code to be executed when the button is clicked
-            MyWorlds world = new MyWorlds();
-            Greenfoot.setWorld(world);
+            LevelSelect selectLevel = new LevelSelect();
+            Greenfoot.setWorld(selectLevel);
         }
     }
 }

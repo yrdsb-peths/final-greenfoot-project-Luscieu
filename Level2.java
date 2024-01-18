@@ -1,22 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class World1 here.
+ * Write a description of class World2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class World1 extends MyWorlds
+public class Level2 extends MyWorlds
 {
     Wood wood;
     Ball ball;
+    int ballCount = 0;
     int once = 0;
     GreenfootSound bowShoot = new GreenfootSound("shoot1.mp3");
     /**
      * Constructor for objects of class World1.
      * 
      */
-    public World1()
+    public Level2()
     {
         
         
@@ -34,32 +35,35 @@ public class World1 extends MyWorlds
         }
         */
         
-        addObject(new Pig(20),320,180);
-        addObject(new Pig(20),400,180);
-        addObject(new Pig(20),480,180);
+        addObject(new Pig(20),430,180);
+        addObject(new Pig(20),540,150);
         addObject(new Sling(),100,275);
         addObject(new Sun(), 100,100);
         addObject(new Back(), 30, 30);
         
+        addObject(new Rock(20),300,240);
+        addObject(new Rock(20),430,290);
+        addObject(new Rock(20),410,180);
+        addObject(new Rock(20),540,250);
         
-        for(int i = 0; i<4;i++)
-        {
-            addObject(new Rock(20),320,290-15*i);
-            if(i<3)
-            {
-                addObject(new Rock(20),400,290-15*i);
-            }
-            if(i<2)
-            {
-                addObject(new Rock(20),480,290-15*i);
-            }
-        }
         
-        for(int i = 0; i<4;i++)
+        Star one = new Star();
+        Star two = new Star();
+        Star three = new Star();
+        
+        Blackstar four = new Blackstar();
+        addObject(four,450,40);
+        Blackstar five = new Blackstar();
+        addObject(five,505,40);
+        Blackstar six = new Blackstar();
+        addObject(six,560,40);
+        
+        for(int i = 0; i<2;i++)
         {
-            addObject(new Wood(20),320,200-15*i);
-            addObject(new Wood(20),400,200-15*i);
-            addObject(new Wood(20),480,200-15*i);
+            addObject(new Wood(20),300,180-22*i);
+            addObject(new Wood(20),430,240-22*i);
+            addObject(new Wood(20),410,140-22*i);
+            addObject(new Wood(20),540,200-22*i);
         }
     }
     public void act()
@@ -74,7 +78,6 @@ public class World1 extends MyWorlds
                 ball = new Ball();
                 addObject(ball,100,275);
                 MyWorlds.countBall(-1);
-                
                 if(275-mouse.getY() > -50)
                 {
                     ball.velocityY = (275-mouse.getY())/10;
@@ -95,7 +98,6 @@ public class World1 extends MyWorlds
         }
         
         
-    
         Star one = new Star();
         Star two = new Star();
         Star three = new Star();
@@ -111,6 +113,8 @@ public class World1 extends MyWorlds
             addObject(six,560,40);
             once++;
         }
+        
+        
         if(MyWorlds.getScore()>1000)
         {
             if(six!=null)
