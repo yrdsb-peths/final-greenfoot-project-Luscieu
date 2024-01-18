@@ -10,7 +10,6 @@ Wood is moveable, and grant the user 100 points when it falls.
 Glass is breakable on touch from a ball.
 Pigs are moveable, and grant the user 100 points when it falls.
 
-This is the README.md file.
 
 ## 🏢 Credits 
 > Uses physics from MatheMagician: https://www.greenfoot.org/scenarios/5645 | Made by Brennan Lyn
