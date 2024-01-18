@@ -1,4 +1,4 @@
-#Angry Birds
+# Angry Birds
 
 ## 🎮 How to play
 Select the level from the level select screen. Level 1 is the recommended start, but feel free to start anywhere.
