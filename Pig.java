@@ -42,7 +42,7 @@ public class Pig extends Animate
         }
         impartForce();
     
-        velocityY += .01;
+        velocityY += .02;
         //speed += .1;
     
         if(getY() <= 288-(10*Math.sin(Math.abs(Math.toRadians(getRotation()))))&&!getBelow())

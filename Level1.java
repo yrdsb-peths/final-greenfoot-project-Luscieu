@@ -11,7 +11,11 @@ public class Level1 extends MyWorlds
     Wood wood;
     Ball ball;
     int once = 0;
+    int oneStar = 300;
+    int twoStar = 600;
+    int threeStar = 1000;
     GreenfootSound bowShoot = new GreenfootSound("shoot1.mp3");
+    SimpleTimer gameOverTimer = new SimpleTimer();
     /**
      * Constructor for objects of class World1.
      * 
@@ -74,7 +78,10 @@ public class Level1 extends MyWorlds
                 ball = new Ball();
                 addObject(ball,100,275);
                 MyWorlds.countBall(-1);
-                
+                if(getBall()==0)
+                {
+                    gameOverTimer.mark(); //starts gameover timer
+                }
                 if(275-mouse.getY() > -50)
                 {
                     ball.velocityY = (275-mouse.getY())/10;
@@ -93,7 +100,10 @@ public class Level1 extends MyWorlds
                 }
             }
         }
-        
+        if(MyWorlds.getBall()==0 && gameOverTimer.millisElapsed()>3000)
+        {
+            gameOver();
+        }
         
     
         Star one = new Star();
@@ -111,7 +121,7 @@ public class Level1 extends MyWorlds
             addObject(six,560,40);
             once++;
         }
-        if(MyWorlds.getScore()>1000)
+        if(MyWorlds.getScore()>threeStar)
         {
             if(six!=null)
             {
@@ -119,7 +129,7 @@ public class Level1 extends MyWorlds
             }
             addObject(three,560,40);
         }
-        if(MyWorlds.getScore()>600)
+        if(MyWorlds.getScore()>twoStar)
         {
             if(five!=null)
             {
@@ -127,7 +137,7 @@ public class Level1 extends MyWorlds
             }
             addObject(two,505,40);
         }
-        if(MyWorlds.getScore()>300)
+        if(MyWorlds.getScore()>oneStar)
         {
             if(four!=null)
             {
@@ -135,5 +145,30 @@ public class Level1 extends MyWorlds
             }
             addObject(one,450,40); 
         }
+    }
+    public void gameOver()
+    {
+        if(MyWorlds.getScore()>threeStar)
+        {
+            Label results = new Label("Three stars huh? Nice.", 30);
+            addObject(results, 300, 200);
+        }
+        else if(MyWorlds.getScore()>twoStar)
+        {
+            Label results = new Label("Two Stars? Decent, but you can do better.", 30);
+            addObject(results, 300, 200);
+        }
+        else if(MyWorlds.getScore()>oneStar)
+        {
+            Label results = new Label("One Star? Really? Get better.", 30);
+            addObject(results, 300, 200);
+        }
+        else
+        {
+            Label results = new Label("Zero Stars? Pathetic.", 40);
+            addObject(results, 300, 200);
+        }
+        addObject(new Back(),270, 270);
+        addObject(new Level1Button(), 330,270);
     }
 }

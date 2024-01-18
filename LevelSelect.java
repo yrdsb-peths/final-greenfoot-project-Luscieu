@@ -21,6 +21,9 @@ public class LevelSelect extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);  
         
+        Label title = new Label("Angry Birds", 80);
+        addObject(title, 300, 50);
+        
         
         addObject(new Level1Button(), 223, 215);
         addObject(new Level2Button(), 300, 215);

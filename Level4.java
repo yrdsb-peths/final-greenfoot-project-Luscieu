@@ -12,7 +12,11 @@ public class Level4 extends MyWorlds
     Ball ball;
     int ballCount = 0;
     int once = 0;
+    int oneStar = 300;
+    int twoStar = 600;
+    int threeStar = 1000;
     GreenfootSound bowShoot = new GreenfootSound("shoot1.mp3");
+    SimpleTimer gameOverTimer = new SimpleTimer();
     /**
      * Constructor for objects of class World1.
      * 
@@ -35,16 +39,30 @@ public class Level4 extends MyWorlds
         }
         */
         
-        addObject(new Pig(20),430,180);
-        addObject(new Pig(20),540,150);
+        
         addObject(new Sling(),100,275);
         addObject(new Sun(), 100,100);
         addObject(new Back(), 30, 30);
         
-        addObject(new Glass(20),300,240);
-        addObject(new Glass(20),430,290);
-        addObject(new Glass(20),410,180);
-        addObject(new Glass(20),540,250);
+        addObject(new Glass(20),300,150);
+        addObject(new Pig(20),300,120);
+        
+        addObject(new Glass(20),450,240);
+        addObject(new Pig(20),450,210);
+        addObject(new Glass(20),500,270);
+        addObject(new Pig(20),500,240);
+        addObject(new Rock(20), 450, 170);
+        addObject(new Rock(20), 450, 150);
+        addObject(new Glass(20), 430, 150);
+        addObject(new Rock(20), 400, 200);
+        for(int i=0;i<4;i++)
+        {
+            addObject(new Glass(10), 425, 190+i*5);
+            addObject(new Glass(10), 420, 190+i*5);
+            addObject(new Glass(10), 430, 190+i*5);
+            addObject(new Glass(10), 435, 190+i*5);
+            addObject(new Pig(20), 430, 140-i*20);
+        }
         
         
         Star one = new Star();
@@ -58,13 +76,7 @@ public class Level4 extends MyWorlds
         Blackstar six = new Blackstar();
         addObject(six,560,40);
         
-        for(int i = 0; i<2;i++)
-        {
-            addObject(new Wood(20),300,180-22*i);
-            addObject(new Wood(20),430,240-22*i);
-            addObject(new Wood(20),410,140-22*i);
-            addObject(new Wood(20),540,200-22*i);
-        }
+        
     }
     public void act()
     {
@@ -78,6 +90,10 @@ public class Level4 extends MyWorlds
                 ball = new Ball();
                 addObject(ball,100,275);
                 MyWorlds.countBall(-1);
+                if(getBall()==0)
+                {
+                    gameOverTimer.mark(); //starts gameover timer
+                }
                 if(275-mouse.getY() > -50)
                 {
                     ball.velocityY = (275-mouse.getY())/10;
@@ -96,7 +112,10 @@ public class Level4 extends MyWorlds
                 }
             }
         }
-        
+        if(MyWorlds.getBall()==0 && gameOverTimer.millisElapsed()>3000)
+        {
+            gameOver();
+        }
         
         Star one = new Star();
         Star two = new Star();
@@ -115,7 +134,7 @@ public class Level4 extends MyWorlds
         }
         
         
-        if(MyWorlds.getScore()>1000)
+        if(MyWorlds.getScore()>threeStar)
         {
             if(six!=null)
             {
@@ -123,7 +142,7 @@ public class Level4 extends MyWorlds
             }
             addObject(three,560,40);
         }
-        if(MyWorlds.getScore()>600)
+        if(MyWorlds.getScore()>twoStar)
         {
             if(five!=null)
             {
@@ -131,7 +150,7 @@ public class Level4 extends MyWorlds
             }
             addObject(two,505,40);
         }
-        if(MyWorlds.getScore()>300)
+        if(MyWorlds.getScore()>oneStar)
         {
             if(four!=null)
             {
@@ -139,6 +158,31 @@ public class Level4 extends MyWorlds
             }
             addObject(one,450,40); 
         }
+    }
+    public void gameOver()
+    {
+        if(MyWorlds.getScore()>threeStar)
+        {
+            Label results = new Label("Three stars huh? Nice.", 30);
+            addObject(results, 300, 200);
+        }
+        else if(MyWorlds.getScore()>twoStar)
+        {
+            Label results = new Label("Two Stars? Decent, but you can do better.", 30);
+            addObject(results, 300, 200);
+        }
+        else if(MyWorlds.getScore()>oneStar)
+        {
+            Label results = new Label("One Star? Really? Get better.", 30);
+            addObject(results, 300, 200);
+        }
+        else
+        {
+            Label results = new Label("Zero Stars? Pathetic.", 40);
+            addObject(results, 300, 200);
+        }
+        addObject(new Back(),270, 270);
+        addObject(new Level4Button(), 330,270);
     }
 }
 
