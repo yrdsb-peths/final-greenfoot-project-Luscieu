@@ -23,7 +23,7 @@ public class Level1 extends MyWorlds
     public Level1()
     {
         
-        
+        //sets background
         getBackground().setColor(Color.BLUE); //Sets color to blue
         getBackground().fill(); // creates background using the set color
         getBackground().setColor(Color.GREEN);
@@ -38,14 +38,12 @@ public class Level1 extends MyWorlds
         }
         */
         
-        addObject(new Pig(20),320,180);
-        addObject(new Pig(20),400,180);
-        addObject(new Pig(20),480,180);
+        //necessary objects
         addObject(new Sling(),100,275);
         addObject(new Sun(), 100,100);
         addObject(new Back(), 30, 30);
         
-        
+        //map specific objects
         for(int i = 0; i<4;i++)
         {
             addObject(new Rock(20),320,290-15*i);
@@ -58,7 +56,9 @@ public class Level1 extends MyWorlds
                 addObject(new Rock(20),480,290-15*i);
             }
         }
-        
+        addObject(new Pig(20),320,180);
+        addObject(new Pig(20),400,180);
+        addObject(new Pig(20),480,180);
         for(int i = 0; i<4;i++)
         {
             addObject(new Wood(20),320,200-15*i);
@@ -68,7 +68,7 @@ public class Level1 extends MyWorlds
     }
     public void act()
     {
-        
+        //Allows ball to be shot
         if(Greenfoot.mouseClicked(null)){
             MouseInfo mouse = Greenfoot.getMouseInfo();
             if(mouse.getButton() <2 && MyWorlds.getBall()>=1)
@@ -100,20 +100,19 @@ public class Level1 extends MyWorlds
                 }
             }
         }
+        
         if(MyWorlds.getBall()==0 && gameOverTimer.millisElapsed()>3000)
         {
             gameOver();
         }
         
-    
+        //creates stars
         Star one = new Star();
         Star two = new Star();
         Star three = new Star();
-        
         Blackstar four = new Blackstar();
         Blackstar five = new Blackstar();
         Blackstar six = new Blackstar();
-        
         if(once == 0)
         {
             addObject(four,450,40);
@@ -121,6 +120,8 @@ public class Level1 extends MyWorlds
             addObject(six,560,40);
             once++;
         }
+        
+        //adjusts stars based on score
         if(MyWorlds.getScore()>threeStar)
         {
             if(six!=null)
@@ -146,6 +147,11 @@ public class Level1 extends MyWorlds
             addObject(one,450,40); 
         }
     }
+    
+    /*
+     * This method comments on the player? performance based on score, and triggers two buttons to appear, allowing the 
+     * player to restart, or go back to the level select screen.
+     */
     public void gameOver()
     {
         if(MyWorlds.getScore()>threeStar)

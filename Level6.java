@@ -38,33 +38,24 @@ public class Level6 extends MyWorlds
         }
         */
         
-        addObject(new Pig(20),320,180);
-        addObject(new Pig(20),400,180);
-        addObject(new Pig(20),480,180);
+        
         addObject(new Sling(),100,275);
         addObject(new Sun(), 100,100);
         addObject(new Back(), 30, 30);
         
-        
-        for(int i = 0; i<4;i++)
+        for(int i = 0; i<2; i++)
         {
-            addObject(new Rock(20),320,290-15*i);
-            if(i<3)
-            {
-                addObject(new Rock(20),400,290-15*i);
-            }
-            if(i<2)
-            {
-                addObject(new Rock(20),480,290-15*i);
-            }
+            addObject(new Rock(30),220, 272-i*25);
+            addObject(new Rock(30), 380, 272-i*25);
+            addObject(new Glass(20), 300+i*160, 280);
+            addObject(new Pig(20), 300, 260-i*20);
+            addObject(new Pig(20), 460, 260-i*20);
+            addObject(new Wood(20), 220, 240-i*20);
+            addObject(new Wood(20), 380, 240-i*20);
         }
         
-        for(int i = 0; i<4;i++)
-        {
-            addObject(new Wood(20),320,200-15*i);
-            addObject(new Wood(20),400,200-15*i);
-            addObject(new Wood(20),480,200-15*i);
-        }
+        
+        
     }
     public void act()
     {

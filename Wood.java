@@ -70,6 +70,10 @@ public class Wood extends Animate
             world.scoreIncrease();
         }
     }
+    
+    /*
+     * Gets friction
+     */
     public float getFriction()
     {
         float friction = 0;
@@ -77,6 +81,10 @@ public class Wood extends Animate
             friction += .3;
         return 1-friction;
     }
+    
+    /*
+     * Imparts force to other object
+     */
     public void impartForce()
     {
         List<Animate> targets = getIntersectingObjects(Animate.class);
@@ -94,6 +102,10 @@ public class Wood extends Animate
             {}
         }
     }
+    
+    /*
+     * Gets objects above it
+     */
     public float getAbove()
     {
         List<Wood> bottom= getWorld().getObjects(Wood.class);
@@ -150,6 +162,10 @@ public class Wood extends Animate
             //flipper.slideGetAbove();
         }
     }
+    
+    /*
+     * Gets objects below it
+     */
     public boolean getBelow()
     {
         List<Animate> bottom= getWorld().getObjects(Animate.class);
@@ -182,6 +198,10 @@ public class Wood extends Animate
         }*/
         return verdict;
     }
+    
+    /*
+     * Transfers velocity.
+     */
     public void transferVelocity(float x, float y)
     {
         velocityX += x;

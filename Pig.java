@@ -56,6 +56,8 @@ public class Pig extends Animate
             //velocityX = velocityX*.7f;
             //velocityX = 0;
         }
+        
+        //If pig touches green, it is removed, and increase the player? score
         if(getY()>285)
         {
             getWorld().removeObject(this);
@@ -65,6 +67,10 @@ public class Pig extends Animate
             world.scoreIncrease();
         }
     }
+    
+    /*
+     * Gets friction
+     */
     public float getFriction()
     {
         float friction = 0;
@@ -74,6 +80,10 @@ public class Pig extends Animate
         }
         return 1-friction;
     }
+    
+    /*
+     * Imparts force to another object
+     */
     public void impartForce()
     {
         List<Animate> targets = getIntersectingObjects(Animate.class);
@@ -91,6 +101,10 @@ public class Pig extends Animate
             {}
         }
     }
+    
+    /*
+     * Gets objects above it
+     */
     public float getAbove()
     {
         List<Wood> bottom= getWorld().getObjects(Wood.class);
@@ -147,6 +161,10 @@ public class Pig extends Animate
             //flipper.slideGetAbove();
         }
     }
+    
+    /*
+     * Gets object below
+     */
     public boolean getBelow()
     {
         List<Animate> bottom= getWorld().getObjects(Animate.class);
@@ -179,12 +197,18 @@ public class Pig extends Animate
         }*/
         return verdict;
     }
+    
+    /*
+     * Transfers velocity. Adds given velocity
+     */
     public void transferVelocity(float x, float y)
     {
         velocityX += x;
         velocityY += y;
         stop();
     }
+    
+    
     public void stop()
     {
         if(Math.pow(Math.pow(velocityY,2)+Math.pow(velocityX,2),.5)>2){

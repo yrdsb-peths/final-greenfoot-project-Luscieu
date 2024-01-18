@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Back here.
+ * Changes world to LevelSelect when clicked on
  * 
  * @author Benny
  * @version (a version number or a date)

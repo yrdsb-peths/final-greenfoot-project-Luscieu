@@ -29,6 +29,11 @@ public class Sun extends Actor
     {
         animateSun();
     }
+    
+    
+    /*
+     * animates sun to set image using an array to make the sun appear as if it is spinning.
+     */
     public void animateSun()
     {
         if(animationTimer.millisElapsed() < 80)

@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class LevelSelect here.
+ * Title screen where you can select available levels
  * 
- * @author (your name) 
+ * @author Luscieu
  * @version (a version number or a date)
  */
 public class LevelSelect extends World

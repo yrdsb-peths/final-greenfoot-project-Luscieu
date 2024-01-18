@@ -34,7 +34,9 @@ public class MyWorlds extends World
         addObject(counter, 55, 380);
     }
     
-        
+    /*
+     * Increases score
+     */
     public static void scoreIncrease()
     {
         score+=100;
@@ -50,19 +52,35 @@ public class MyWorlds extends World
         }
         
     }
+    
+    /*
+     * Gets score
+     */
     public static int getScore()
     {
         return score;
     }
+    
+    /*
+     * Changes ball count by set increment
+     */
     public static void countBall(int increment)
     {
         ballCount+=increment;
         ballLabel.setValue(ballCount+"x");
     }
+    
+    /*
+     * Gets ball count
+     */
     public static int getBall()
     {
         return ballCount;
     }
+    
+    /*
+     * Sets ball count
+     */
     public static void setBall(int balls)
     {
         ballCount = balls;

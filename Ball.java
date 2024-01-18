@@ -45,6 +45,10 @@ public class Ball extends Animate
         //if(velocityY < .3&&velocityX < .3)
             //getWorld().removeObject(this);
     }    
+    
+    /*
+     * Checks objects below. Used to determine whether to roll, fall, or do nothing.
+     */
     public void checkBottom()
     {
         List<Wood> targets = getIntersectingObjects(Wood.class);
@@ -64,6 +68,10 @@ public class Ball extends Animate
             roll = false;
         }
     }
+    
+    /*
+     * Imparts force to another object.
+     */
     public void impartForce()
     {
         List<Animate> targets = getIntersectingObjects(Animate.class);
